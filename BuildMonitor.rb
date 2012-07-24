@@ -5,8 +5,8 @@ require 'haml'
 
 class BuildMonitor < Sinatra::Base
 
-  TEAMCITY_BUILDTYPE_LIST = "http://teamcity:8111/httpAuth/app/rest/buildTypes/"
-  TEAMCITY_BUILD_LIST = "http://teamcity:8111/httpAuth/app/rest/builds/"
+  TEAMCITY_BUILDTYPE_LIST = "http://10.65.95.133:8111/httpAuth/app/rest/buildTypes/"
+  TEAMCITY_BUILD_LIST = "http://10.65.95.133:8111/httpAuth/app/rest/builds/"
   TEAMCITY_USERNAME = 'helpcentre'
   TEAMCITY_PASSWORD = 'helpcentre'
 
