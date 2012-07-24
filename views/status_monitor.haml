@@ -1,0 +1,10 @@
+!!! 1.1
+%html
+  %head
+    %link(rel="stylesheet" type="text/css" href="css/buildmonitor.css")
+    %title
+      Status monitor
+  %body
+    -@projects_info.each do |key, value|
+      %a{class: value[:successful]?'success':'failure', href: value[:url], style: "width: #{Float(89) / @horizontal_items}%; margin: #{Float(3) / @horizontal_items}%"}
+        #{key}

@@ -1,0 +1,26 @@
+a {
+    border: 4px solid #1C4C16;
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    height: 230px;
+    font-size: 1.6em;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 1px 1px 2px #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.success {
+    background: none repeat scroll 0 0 #407A39;
+}
+
+.failure {
+    background: none repeat scroll 0 0 red;
+}
+
+body {
+    background-color: #000000;
+}
