@@ -1,3 +1,8 @@
+require 'open-uri'
+require 'nokogiri'
+require 'sinatra'
+require 'haml'
+
 class BuildMonitor < Sinatra::Base
 
   TEAMCITY_BUILDTYPE_LIST = "http://teamcity:8111/httpAuth/app/rest/buildTypes/"
@@ -51,7 +56,6 @@ class BuildMonitor < Sinatra::Base
 
   get '/status-monitor' do
     @projects_info = projects_info
-    puts @projects_info
     @horizontal_items = Math.sqrt(@projects_info.length).floor
     @vertical_items = (Float(@projects_info.length) / @horizontal_items).ceil
     haml :"status_monitor"
