@@ -5,6 +5,10 @@
     %title
       Status monitor
   %body
+    -if @projects_info.any? {|key,value|!value[:successful]}
+      %audio{autoplay:'autoplay'}
+        %source{src:'/killbill.mp3', type: "audio/mpeg" }/
+        %source{src:'/killbill.ogg', type: "audio/ogg" }/
     -@projects_info.each do |key, value|
       %a{class: value[:successful]?'success':'failure', href: value[:url], style: "width: #{Float(89) / @horizontal_items}%; margin: #{Float(3) / @horizontal_items}%"}
         #{key}
