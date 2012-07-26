@@ -9,9 +9,8 @@
       -unless request.cookies['playedalert'].eql? 'true'
         :javascript
           var theDate = new Date();
-          var tenMinsLater = new Date( theDate.getTime() + 1200000 );
-          var expiryDate = tenMinsLater.toGMTString();
-          console.log (tenMinsLater.toGMTString());
+          var twentyMinsLater = new Date( theDate.getTime() + 1200000 );
+          var expiryDate = twentyMinsLater.toGMTString();
           document.cookie = "playedalert=true;expires="+expiryDate;
         %audio{autoplay:'autoplay'}
           %source{src:'/killbill.ogg', type: "audio/ogg" }/
