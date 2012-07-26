@@ -9,7 +9,7 @@
       -unless request.cookies['playedalert'].eql? 'true'
         :javascript
           var theDate = new Date();
-          var tenMinsLater = new Date( theDate.getTime() + 600000 );
+          var tenMinsLater = new Date( theDate.getTime() + 1200000 );
           var expiryDate = tenMinsLater.toGMTString();
           console.log (tenMinsLater.toGMTString());
           document.cookie = "playedalert=true;expires="+expiryDate;
@@ -21,5 +21,7 @@
         document.cookie = "playedalert=false;";
 
     -@projects_info.each do |key, value|
+      -style = "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%"
+      -style += "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%"
       %a{class: value[:successful]?'success':'failure', href: value[:url], style: "width: #{Float(89) / @horizontal_items}%; margin: #{Float(3) / @horizontal_items}%"}
         #{key}
