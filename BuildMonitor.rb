@@ -60,5 +60,4 @@ class BuildMonitor < Sinatra::Base
     @vertical_items = (Float(@projects_info.length) / @horizontal_items).ceil
     haml :"status_monitor"
   end
-
 end
