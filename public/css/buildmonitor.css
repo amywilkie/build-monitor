@@ -2,7 +2,6 @@ a {
     border: 4px solid #1C4C16;
     border-radius: 20px 20px 20px 20px;
     float: left;
-    height: 230px;
     font-size: 3em;
     font-weight: bold;
     font-family: Helvetica;
@@ -63,4 +62,5 @@ a {
 
 body {
     background-color: #000000;
+    height: 1300px;
 }

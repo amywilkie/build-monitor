@@ -21,7 +21,7 @@
         document.cookie = "playedalert=false;";
 
     -@projects_info.each do |key, value|
-      -style = "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%"
-      -style += "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%"
-      %a{class: value[:successful]?'success':'failure', href: value[:url], style: "width: #{Float(89) / @horizontal_items}%; margin: #{Float(3) / @horizontal_items}%"}
+      -style = "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%;"
+      -style += "height: #{Float(89) / @vertical_items}%; margin-top: #{Float(3) / @vertical_items}%; margin-bottom: #{Float(3) / @vertical_items}%"
+      %a{class: value[:successful]?'success':'failure', href: value[:url], style: style}
         #{key}
