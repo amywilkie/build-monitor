@@ -1,12 +1,12 @@
 !!!5
 %html
   %head
-    %meta(http-equiv="refresh" content="5")
+    %meta(http-equiv="refresh" content="15")
     %link(rel="stylesheet" type="text/css" href="css/buildmonitor.css")
     %title
       Status monitor
   %body
-    -if @projects_info.any? {|key,value|!value[:successful]}
+    -if @projects_info.any? {|key,value|!value}
       -unless request.cookies['playedalert'].eql? 'true'
         :javascript
           var theDate = new Date();
@@ -23,5 +23,5 @@
     -@projects_info.each do |key, value|
       -style = "width: #{Float(89) / @horizontal_items}%; margin-left: #{Float(3) / @horizontal_items}%; margin-right: #{Float(3) / @horizontal_items}%;"
       -style += "height: #{Float(89) / @vertical_items}%; margin-top: #{Float(3) / @vertical_items}%; margin-bottom: #{Float(3) / @vertical_items}%"
-      %a{class: value[:successful]?'success':'failure', href: value[:url], style: style}
+      %a{class: value ? 'success':'failure', style: style}
         #{key}

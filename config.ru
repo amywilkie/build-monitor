@@ -1,3 +1,3 @@
-require './BuildMonitor.rb'
+require './BuildScraper.rb'
 
-run BuildMonitor
+run BuildScraper

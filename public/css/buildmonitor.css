@@ -27,28 +27,28 @@ a {
 @keyframes amberflash
 {
 0%   {background:red;}
-50%   {background:orange;}
+50%   {background:#f98ed6;}
 100% {background:red;}
 }
 
 @-moz-keyframes amberflash /* Firefox */
 {
 0%   {background:red;}
-50%   {background:orange;}
+50%   {background:#f98ed6;}
 100% {background:red;}
 }
 
 @-webkit-keyframes amberflash /* Safari and Chrome */
 {
 0%   {background:red;}
-50%   {background:orange;}
+50%   {background:#f98ed6;}
 100% {background:red;}
 }
 
 @-o-keyframes amberflash /* Opera */
 {
 0%   {background:red;}
-50%   {background:orange;}
+50%   {background:#f98ed6;}
 100% {background:red;}
 }
 
