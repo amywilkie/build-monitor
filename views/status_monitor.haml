@@ -9,9 +9,10 @@
     -if @projects_info.any? {|key,value|!value}
       -unless request.cookies['playedalert'].eql? 'true'
         :javascript
+          var AN_HOUR = 3600000; 
           var theDate = new Date();
-          var twentyMinsLater = new Date( theDate.getTime() + 1200000 );
-          var expiryDate = twentyMinsLater.toGMTString();
+          var alarmInterval = new Date( theDate.getTime() + AN_HOUR);
+          var expiryDate = alarmInterval.toGMTString();
           document.cookie = "playedalert=true;expires="+expiryDate;
         %audio{autoplay:'autoplay'}
           %source{src:'/killbill.ogg', type: "audio/ogg" }/
