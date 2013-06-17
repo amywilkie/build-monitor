@@ -1,3 +1,3 @@
-require './BuildScraper.rb'
+require './build_scraper'
 
 run BuildScraper

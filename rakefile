@@ -1,5 +1,0 @@
-require './BuildMonitor.rb'
-
-task :start_build_monitor do
-  BuildMonitor.run!
-end
