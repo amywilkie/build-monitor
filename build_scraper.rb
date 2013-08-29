@@ -28,9 +28,15 @@ class BuildScraper < Sinatra::Base
   end
 
   get '/' do
-    @projects_info    = teamcity_projects_info
-    @horizontal_items = Math.sqrt(@projects_info.length).floor
-    @vertical_items   = (Float(@projects_info.length) / @horizontal_items).ceil
-    haml :"status_monitor"
+    begin
+      @projects_info    = teamcity_projects_info
+      @horizontal_items = Math.sqrt(@projects_info.length).floor
+      @vertical_items   = (Float(@projects_info.length) / @horizontal_items).ceil
+      haml :"status_monitor"
+    rescue Exception => e
+      puts "project info: #{@projects_info} - horizontal items: #{@horizontal_items} - vertical items: #{@vertical_items}"
+      puts e.message
+      halt 500
+    end
   end
 end
