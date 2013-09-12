@@ -29,7 +29,7 @@ class BuildScraper < Sinatra::Base
 
   get '/' do
     begin
-      @projects_info    = teamcity_projects_info
+      @projects_info    = teamcity_projects_info.reject { |k| k.include? 'Helpproxy' }
       @horizontal_items = Math.sqrt(@projects_info.length).floor
       @vertical_items   = (Float(@projects_info.length) / @horizontal_items).ceil
       haml :"status_monitor"
