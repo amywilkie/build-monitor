@@ -30,13 +30,14 @@ class BuildScraper < Sinatra::Base
   get '/' do
     begin
       @projects_info    = teamcity_projects_info.reject { |k| k.include? 'Helpproxy' }
-      @horizontal_items = Math.sqrt(@projects_info.length).floor
-      @vertical_items   = (Float(@projects_info.length) / @horizontal_items).ceil
+      if @projects_info.length == 0
+        @horizontal_items = 0
+        @vertical_items = 0
+      else
+        @horizontal_items = Math.sqrt(@projects_info.length).floor
+        @vertical_items   = (Float(@projects_info.length) / @horizontal_items).ceil
+      end
       haml :"status_monitor"
-    rescue Exception => e
-      puts "project info: #{@projects_info} - horizontal items: #{@horizontal_items} - vertical items: #{@vertical_items}"
-      puts e.message
-      halt 500
     end
   end
 end
